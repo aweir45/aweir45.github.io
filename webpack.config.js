@@ -7,7 +7,9 @@ module.exports = {
   mode: prod ? 'production' : 'development',
   entry: './src/index.tsx',
   output: {
-    path: __dirname + '/build/',
+    path: __dirname + '/build/', // Specify the output folder as 'build'
+    filename: 'bundle.js',
+    publicPath: '/', // Adjust if needed for relative paths or routing
   },
   module: {
     rules: [
