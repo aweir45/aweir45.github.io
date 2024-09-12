@@ -31,6 +31,10 @@ module.exports = {
           },
         ],
       },
+        {
+        test: /\.gpx$/,
+        type: 'asset/resource', // This will copy the file to the output directory
+      },
     ]
   },
   devtool: prod ? undefined : 'source-map',
