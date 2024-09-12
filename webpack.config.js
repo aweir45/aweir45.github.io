@@ -33,9 +33,17 @@ module.exports = {
           },
         ],
       },
-        {
-        test: /\.gpx$/,
-        type: 'asset/resource', // This will copy the file to the output directory
+    //     {
+    //     test: /\.gpx$/,
+    //     type: 'asset/resource', // This will copy the file to the output directory
+    //   },
+      {
+        test: /\.(gpx|xml)$/,
+        use: [
+          {
+            loader: 'raw-loader', // Use raw-loader to import files as strings
+          },
+        ],
       },
     ]
   },
@@ -46,4 +54,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
   ],
+  resolve: {
+    extensions: ['.js', '.json', '.gpx', '.xml'],
+  },
 };
